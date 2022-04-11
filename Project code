@@ -1,1 +1,53 @@
+from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor,LandmarkMap
+from math import pi, atan2
+import matplotlib.pyplot as plt
 
+x1 = int(input('Please provide the starting x-coordinate:'))
+y1 = int(input('Please provide the starting y-coordinate:'))
+z1 = int(input('Please provide the starting z-coordinate:'))
+h1 = int(input('Please provide the number of obstacles:'))
+
+anim = VehicleIcon('Robot.png', scale = 2)
+veh = Bicycle(
+ animation=anim,
+ control=RandomPath,
+ dim = 100,
+ x0=(x1,y1,z1),
+)
+veh.init(plot=True)
+
+map = LandmarkMap(h1,20)
+map.plot()
+
+x2 = int(input('Please provide the target x-coordinate:'))
+y2 = int(input('Please provide the target y-coordinate:'))
+goal=[x2,y2]; 
+goal_marker_style = {
+ 'marker': 'D',
+ 'markersize': 6,
+ 'color': 'b',
+}
+plt.plot(goal[0], goal[1], **goal_marker_style)
+
+
+sensor=RangeBearingSensor(robot=veh, map= map ,animate=True)
+
+
+run =True
+while(run):
+ goal_heading = atan2(
+ goal[1] - veh.x[1],
+ goal[0] - veh.x[0]
+ )
+ steer = goal_heading-veh.x[2]
+ veh.step(2,steer)
+ if( (abs(goal[0]-veh.x[0]) > 0.3) or (abs(goal[1]-veh.x[1]) >
+ 0.3) ):
+    run=True
+ else:
+    run =False
+ veh._animation.update(veh.x)
+ plt.pause(0.0005)
+
+veh._animation.update(veh.x)
+plt.pause(1000)
