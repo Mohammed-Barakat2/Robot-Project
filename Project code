@@ -3,23 +3,23 @@ from math import pi, atan2
 import matplotlib.pyplot as plt
 
 a1 = int(input('Please provide the starting x-coordinate:'))
-y1 = int(input('Please provide the starting y-coordinate:'))
-z1 = int(input('Please provide the starting z-coordinate:'))
-h1 = int(input('Please provide the number of obstacles:'))
+b1 = int(input('Please provide the starting y-coordinate:'))
+c1 = int(input('Please provide the starting z-coordinate:'))
+d1 = int(input('Please provide the number of obstacles:'))
 
 anim = VehicleIcon('Robot.png', scale = 2)
 veh = Bicycle(
  animation=anim,
  control=RandomPath,
- x0=(a1,y1,z1),
+ x0=(a1,b1,c1),
 )
 veh.init(plot=True)
 
-map = LandmarkMap(h1,20)
+map = LandmarkMap(d1,20)
 map.plot()
 
-x2 = int(input('Please provide the target x-coordinate:'))
-y2 = int(input('Please provide the target y-coordinate:'))
+a2 = int(input('Please provide the target x-coordinate:'))
+b2 = int(input('Please provide the target y-coordinate:'))
 goal=[x2,y2]; 
 goal_marker_style = {
  'marker': 'D',
