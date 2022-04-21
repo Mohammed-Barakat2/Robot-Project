@@ -2,7 +2,7 @@ from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor
 from math import pi, atan2
 import matplotlib.pyplot as plt
 
-x1 = int(input('Please provide the starting x-coordinate:'))
+a1 = int(input('Please provide the starting x-coordinate:'))
 y1 = int(input('Please provide the starting y-coordinate:'))
 z1 = int(input('Please provide the starting z-coordinate:'))
 h1 = int(input('Please provide the number of obstacles:'))
@@ -11,7 +11,7 @@ anim = VehicleIcon('Robot.png', scale = 2)
 veh = Bicycle(
  animation=anim,
  control=RandomPath,
- x0=(x1,y1,z1),
+ x0=(a1,y1,z1),
 )
 veh.init(plot=True)
 
