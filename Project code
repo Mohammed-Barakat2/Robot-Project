@@ -11,7 +11,6 @@ anim = VehicleIcon('Robot.png', scale = 2)
 veh = Bicycle(
  animation=anim,
  control=RandomPath,
- dim = 100,
  x0=(x1,y1,z1),
 )
 veh.init(plot=True)
