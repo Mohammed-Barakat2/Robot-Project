@@ -2,10 +2,9 @@ from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor
 from math import pi, atan2
 import matplotlib.pyplot as plt
 
-#User inputs for starting robot position (x,y,z), number of randomly generated obsticles, and the goal position.
+#User inputs for starting robot position (x,y), number of randomly generated obsticles, and the goal position.
 a1 = int(input('Please provide the starting x-coordinate:'))
 b1 = int(input('Please provide the starting y-coordinate:'))
-c1 = int(input('Please provide the starting z-coordinate:'))
 d1 = int(input('Please provide the number of obstacles:'))
 a2 = int(input('Please provide the target x-coordinate:'))
 b2 = int(input('Please provide the target y-coordinate:'))
@@ -26,14 +25,18 @@ def gettotarget():
  veh._animation.update(veh.x)
  plt.pause(0.0005)
 
- def
+#Function for robot to avoid randomly placed obstacles
+def avoidobstacles(readings):
+    for i in readings:
+        if i[0]<1.5: 
+            veh.x[2]+=2
 
 
 anim = VehicleIcon('Robot.png', scale = 3)
 veh = Bicycle(
  animation=anim,
  control=RandomPath,
- x0=(a1,b1,c1),
+ x0=(a1,b1,0),
 )
 veh.init(plot=True)
 
@@ -53,11 +56,13 @@ plt.plot(goal[0], goal[1], **goal_marker_style)
 #Range Sensor that provides distance and angle of random obstacles
 sensor=RangeBearingSensor(robot=veh, map= map ,animate=True)
 
-#While loop to make the robot move towards the goal
+#While loop to make the robot move towards the goal and avoid obstacles
 run =True
 while(run): 
     if(gettotarget()) is False :
         run = False
+    avoidobstacles(sensor.h(veh.x))
+    
 
 
 plt.pause(1000)
