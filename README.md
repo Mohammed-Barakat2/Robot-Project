@@ -20,7 +20,7 @@ After the appropriate imports have been written, we use `int(input))` to allow t
 We then use LandmarkMap to generate the randomly positioned followed by the RangeBearingSensor that mesures the distance and angle of every obstacle to the robot.
 Finally, we make a `while(run)` loop, initiallizing the code by a `run=True` to make sure the while loop will always function at the begining. Inside the while loop we call in the def functions we previously wrote and making it so the loop will stop once the first functions returns a False.
 Finally we have `plt.pause(1000)` delay so the simulation can be watched and not close immediatly.
-To simplify what the code does, here is a flowchartof the code.
+To simplify what the code does, here is a flow chart of the code.
 
 ![flowchart](/flowchart.PNG).
 
@@ -37,6 +37,7 @@ The robot will start moving towards the goal,avoiding all obstacles in the way, 
 ## Limitations and Future Work
 Some of the issues we encoutered were mainly due to the obstacle maneuvering:
 - Robot would spin around an obstacle until it eventually leaves it and continues to the goal
-- If a random obstacle happened to be placed right next to the robot's initial position
+- If a random obstacle happened to be placed right next to the robot's initial position.
+
 In the future we hope to iron out these issues and work on a significantly more robust obstacle maneuvering using Python and RoboticsToolBox
 
