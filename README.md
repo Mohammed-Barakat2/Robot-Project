@@ -31,7 +31,7 @@ Once the code has compiled and has ran, a window will open showing the robot, ob
 
 The robot will start moving towards the goal,avoiding all obstacles in the way, until it reaches the goal and stops moving.
 
-![Simulation Done](/Simulation Complete.PNG).
+![Simulation Done](/SimulationComplete.PNG).
 
 
 ## Limitations and Future Work
