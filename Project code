@@ -2,7 +2,7 @@ from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor
 from math import pi, atan2
 import matplotlib.pyplot as plt
 
-#User inputs for starting robot position (x,y), number of randomly generated obsticles, and the goal position.
+#User inputs for starting robot position (x,y), number of randomly generated obstacles, and the goal position.
 a1 = int(input('please provide the starting x-coordinate:'))
 b1 = int(input('please provide the starting y-coordinate:')) 
 d1 = int(input('please provide the number of obstacles:'))
