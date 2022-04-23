@@ -22,16 +22,16 @@ Finally, we make a `while(run)` loop, initiallizing the code by a `run=True` to 
 Finally we have `plt.pause(1000)` delay so the simulation can be watched and not close immediatly.
 To simplify what the code does, here is a flowchartof the code.
 
-![flowchart](/flowchart.png).
+![flowchart](/flowchart.PNG).
 
 ## Results
 Once the code has compiled and has ran, a window will open showing the robot, obstacles and goal.
 
-![Simulation](/Simulation.png). 
+![Simulation](/Simulation.PNG). 
 
 The robot will start moving towards the goal,avoiding all obstacles in the way, until it reaches the goal and stops moving.
-.
-![Simulation Done](/Simulation Complete.png)
+
+![Simulation Done](/Simulation Complete.PNG).
 
 
 ## Limitations and Future Work
