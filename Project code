@@ -2,11 +2,15 @@ from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor
 from math import pi, atan2
 import matplotlib.pyplot as plt
 
+#User inputs for starting robot position (x,y,z), number of randomly generated obsticles, and the goal position.
 a1 = int(input('Please provide the starting x-coordinate:'))
 b1 = int(input('Please provide the starting y-coordinate:'))
 c1 = int(input('Please provide the starting z-coordinate:'))
 d1 = int(input('Please provide the number of obstacles:'))
+a2 = int(input('Please provide the target x-coordinate:'))
+b2 = int(input('Please provide the target y-coordinate:'))
 
+#
 anim = VehicleIcon('Robot.png', scale = 2)
 veh = Bicycle(
  animation=anim,
@@ -15,12 +19,12 @@ veh = Bicycle(
 )
 veh.init(plot=True)
 
+#Randomly placed obsticles on a 20 by 20 grid
 map = LandmarkMap(d1,20)
 map.plot()
 
-a2 = int(input('Please provide the target x-coordinate:'))
-b2 = int(input('Please provide the target y-coordinate:'))
-goal=[x2,y2]; 
+#Goal code
+goal=[a2,b2]; 
 goal_marker_style = {
  'marker': 'D',
  'markersize': 6,
