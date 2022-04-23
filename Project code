@@ -25,7 +25,7 @@ def gettotarget():
  veh._animation.update(veh.x)
  plt.pause(0.0005)
 
-#Function for robot to avoid randomly placed obstacles
+#Function for robot to avoid randomly place to obstacles
 def avoidobstacles(readings):
     for i in readings:
         if i[0]<1.5: 
@@ -40,7 +40,7 @@ veh = Bicycle(
 )
 veh.init(plot=True)
 
-#Randomly placed obsticles on a 20 by 20 grid
+#Randomly place obsticles on a 20 by 20 grid
 map = LandmarkMap(d1,20)
 map.plot()
 
