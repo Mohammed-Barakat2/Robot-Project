@@ -3,11 +3,11 @@ from math import pi, atan2
 import matplotlib.pyplot as plt
 
 #User inputs for starting robot position (x,y), number of randomly generated obsticles, and the goal position.
-a1 = int(input('Please provide the starting x-coordinate:'))
-b1 = int(input('Please provide the starting y-coordinate:'))
-d1 = int(input('Please provide the number of obstacles:'))
-a2 = int(input('Please provide the target x-coordinate:'))
-b2 = int(input('Please provide the target y-coordinate:'))
+a1 = int(input('please provide the starting x-coordinate:'))
+b1 = int(input('please provide the starting y-coordinate:')) 
+d1 = int(input('please provide the number of obstacles:'))
+a2 = int(input('please provide the target x-coordinate:'))
+b2 = int(input('please provide the target y-coordinate:'))
 
 #Function for robot to start moving towards the goal and stopping once it reaches it
 def gettotarget():
